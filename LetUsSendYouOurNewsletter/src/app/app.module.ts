@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { SlideShowComponent } from './components/slide-show/slide-show.component';
+import { SlideShowModule } from './components/slide-show/slide-show.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     ReactiveFormsModule,    
-    NgbModule    
+    NgbModule,
+    HttpClientModule,
+    SlideShowModule   
   ],
   providers: [],
   bootstrap: [AppComponent]
