@@ -18,6 +18,22 @@
 </head>
 
 <body class="homepage" id="body" style="background-color:#ffffff">
+    <ng-template #content let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title">Browser Info</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <ng-container *ngIf="browserInfo.length > 0">
+                <table class="table table-sm table-striped table-hover table-responsive">
+                    <tr *ngFor="let op of browserInfo">
+                        <th>{{ op.name }}</th>
+                        <td>{{ op.value }}</td>
+                    </tr>
+                </table>
+            </ng-container>
+        </div>
+    </ng-template>
 
     <div class="l-wrapper" id="container">
 
@@ -91,7 +107,7 @@
                         <div class="l-rightrail-modules__section-curtain "></div>
                         <div class="l-rightrail-modules__section">
                             <div class="m-make-homepage">
-                                <a class="m-side-nav__link"><span>Display browser information</span></a>
+                                <a class="m-side-nav__link" (click)="displayBrowserInfo(content)"><span>Display browser information</span></a>
                             </div>
                         </div>
                         <div class="l-rightrail-modules__section">
@@ -136,8 +152,7 @@
                                         <input type="text" placeholder="Enter your email address" class="form-control" value="" formControlName="email" />
                                         <div *ngIf=" email && email.touched && email.invalid" [ngClass]="'email-validation-error'">
                                             <small class="text-danger" *ngIf=" email && email.errors && email.errors.required">Email is required.</small>
-                                            <small class="text-danger" *ngIf=" email && email.errors && email.errors.email">Please, enter valid email address.</small>
-                                            <small class="text-danger" *ngIf=" email && email.errors && email.errors.pattern">Please, enter valid email address.</small>
+                                            <small class="text-danger" *ngIf=" (email && email.errors && email.errors.email) || (email && email.errors && email.errors.pattern)">Please, enter valid email address.</small>
                                         </div>
                                         <input type="button" value="Sign Up" class="aol-btn secondary-btn button send-sail-throu-signup" id="send-sail-throu-signup" />
                                     </form>
