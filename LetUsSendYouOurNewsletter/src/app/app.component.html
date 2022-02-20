@@ -129,10 +129,16 @@
                                     <p class="m-text-desc text-side-indent">Our editors will email you a roundup of their favourite stories from across AOL</p>
                                 </div>
                                 <div id="aol-newsletter" class="aol-newsletter ">
-                                    <form>
-                                        <p style="display:none">Sign up using your AOL email or <br /><a id="different-address" class="different-address">use different address</a></p>
-                                        <input type="text" placeholder="Enter your email address" class="email-input   signup-email" value="" /><input type="button" value="Sign Up" class="aol-btn secondary-btn button send-sail-throu-signup" id="send-sail-throu-signup"
-                                        />
+                                    <form [formGroup]="newsLetterForm">
+                                        <p style="display:none">Sign up using your AOL email or <br />
+                                            <a id="different-address" class="different-address">use different address</a>
+                                        </p>
+                                        <input type="text" placeholder="Enter your email address" class="form-control" value="" formControlName="email" />
+                                        <div *ngIf=" email && email.touched && email.invalid" [ngClass]="'email-validation-error'">
+                                            <small class="text-danger" *ngIf=" email && email.errors && email.errors.required">Email is required.</small>
+                                            <small class="text-danger" *ngIf=" email && email.errors && email.errors.email">Please, enter valid email address.</small>
+                                        </div>
+                                        <input type="button" value="Sign Up" class="aol-btn secondary-btn button send-sail-throu-signup" id="send-sail-throu-signup" />
                                     </form>
                                 </div>
 
