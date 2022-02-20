@@ -11,7 +11,7 @@ export class AppComponent {
 
   submitted = false;
   newsLetterForm = new FormGroup({
-    email: new FormControl('',[Validators.required, Validators.email])
+    email: new FormControl('',[Validators.required, Validators.email, Validators.pattern('[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}')])
   }); 
 
   get email() {

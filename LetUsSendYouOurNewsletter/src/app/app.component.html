@@ -137,6 +137,7 @@
                                         <div *ngIf=" email && email.touched && email.invalid" [ngClass]="'email-validation-error'">
                                             <small class="text-danger" *ngIf=" email && email.errors && email.errors.required">Email is required.</small>
                                             <small class="text-danger" *ngIf=" email && email.errors && email.errors.email">Please, enter valid email address.</small>
+                                            <small class="text-danger" *ngIf=" email && email.errors && email.errors.pattern">Please, enter valid email address.</small>
                                         </div>
                                         <input type="button" value="Sign Up" class="aol-btn secondary-btn button send-sail-throu-signup" id="send-sail-throu-signup" />
                                     </form>
