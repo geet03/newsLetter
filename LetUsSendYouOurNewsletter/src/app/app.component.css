@@ -1,3 +1,11 @@
 .email-validation-error {
     color: red;
 }
+
+.modal-header {
+    vertical-align: middle;
+}
+
+.modal-body {
+    vertical-align: middle;
+}

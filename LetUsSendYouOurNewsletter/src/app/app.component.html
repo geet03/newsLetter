@@ -10,18 +10,19 @@
     <title>AOL.co.uk | Breaking News, Sport, Features and Video</title>
 
     <link rel="canonical" href="https://www.aol.co.uk/">
+
     <link href="https://o.aolcdn.com/aoldotcom-releases/test/application.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://s.aolcdn.com/aoldotcom-releases/assets/20180724_1046/stylesheets/homepage-grid.css" />
     <link href="https://o.aolcdn.com/aoldotcom-releases/test/application.css" rel="stylesheet" />
-
-
 </head>
 
 <body class="homepage" id="body" style="background-color:#ffffff">
     <ng-template #content let-modal>
         <div class="modal-header">
             <h4 class="modal-title">Browser Info</h4>
-            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
         </div>
         <div class="modal-body">
             <ng-container *ngIf="browserInfo.length > 0">
@@ -33,7 +34,12 @@
                 </table>
             </ng-container>
         </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+        </div>
     </ng-template>
+
+
 
     <div class="l-wrapper" id="container">
 
@@ -69,6 +75,7 @@
                                         <div class="list-post-item-wrapper">
                                             <div class="list-post-image">
                                                 <img src="https://o.aolcdn.com/images/dims?  thumbnail=650%2C427&amp;image_uri=http%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2F385b818e7b8b75835735919cb6b0de2c%2F206550230%2Fmacca.jpg&amp;client=cbc79c14efcebee57402&amp;signature=c5dc96899c91f1323e1ef75f12bd13a51e2d87a8">
+
                                             </div>
                                             <div class="list-post-description">
                                                 <h3 class="list-post-title">
@@ -107,7 +114,8 @@
                         <div class="l-rightrail-modules__section-curtain "></div>
                         <div class="l-rightrail-modules__section">
                             <div class="m-make-homepage">
-                                <a class="m-side-nav__link" (click)="displayBrowserInfo(content)"><span>Display browser information</span></a>
+                                <a class="m-side-nav__link" (click)="displayBrowserInfo(content)"><span>Display browser
+                    information</span></a>
                             </div>
                         </div>
                         <div class="l-rightrail-modules__section">
@@ -151,8 +159,10 @@
                                         </p>
                                         <input type="text" placeholder="Enter your email address" class="form-control" value="" formControlName="email" />
                                         <div *ngIf=" email && email.touched && email.invalid" [ngClass]="'email-validation-error'">
-                                            <small class="text-danger" *ngIf=" email && email.errors && email.errors.required">Email is required.</small>
-                                            <small class="text-danger" *ngIf=" (email && email.errors && email.errors.email) || (email && email.errors && email.errors.pattern)">Please, enter valid email address.</small>
+                                            <small class="text-danger" *ngIf=" email && email.errors && email.errors.required">Email is
+                        required.</small>
+                                            <small class="text-danger" *ngIf=" (email && email.errors && email.errors.email) || (email && email.errors && email.errors.pattern)">Please,
+                        enter valid email address.</small>
                                         </div>
                                         <input type="button" value="Sign Up" class="aol-btn secondary-btn button send-sail-throu-signup" id="send-sail-throu-signup" />
                                     </form>
@@ -181,19 +191,19 @@
                   xml:space="preserve">
                   <g>
                     <path class="m-svg-aol-logo__path" fill="#000100" d="M333.1,481.9c64.4,0,95.4,51,95.4,94.6c0,43.6-31,94.6-95.4,94.6s-95.4-51-95.4-94.6
-             C237.9,532.9,268.8,481.9,333.1,481.9z M333.1,621.3c23,0,42.5-18.9,42.5-44.8c0-26-19.5-44.8-42.5-44.8s-42.3,18.9-42.3,44.8
-            C290.8,602.3,310.3,621.3,333.1,621.3z" />
+              C237.9,532.9,268.8,481.9,333.1,481.9z M333.1,621.3c23,0,42.5-18.9,42.5-44.8c0-26-19.5-44.8-42.5-44.8s-42.3,18.9-42.3,44.8
+              C290.8,602.3,310.3,621.3,333.1,621.3z" />
                     <g>
                       <path class="m-svg-aol-logo__path" fill="#000100" d="M458.4,428.9h53.7V666h-53.7V428.9z" />
                     </g>
                     <g>
                       <g>
                         <path class="m-svg-aol-logo__path" fill="#000100" d="M576.3,596.3c-19.7,0-35.6,15.9-35.6,35.7c0,19.7,15.9,35.6,35.6,35.6c19.7,0,35.7-15.9,35.7-35.6
-                 C611.8,612.2,595.9,596.3,576.3,596.3z" />
+                  C611.8,612.2,595.9,596.3,576.3,596.3z" />
                       </g>
                     </g>
                     <path class="m-svg-aol-logo__path" fill="#000100" d="M141.2,428.9H93.5L0,666h63.3l12.4-34.3H158l11.5,34.3h63.9L141.2,428.9z M92.4,583.6l24.9-82.6l24.9,82.6
-            H92.4z" />
+              H92.4z" />
                   </g>
                 </svg>
               </a>
@@ -210,7 +220,6 @@
             </footer>
         </div>
     </div>
-
 </body>
 
 
